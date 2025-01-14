@@ -4,10 +4,14 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "build:worker": "opennextjs-cloudflare",
+    "deploy:worker": "wrangler deploy",
     "check-types": "tsc --noEmit --incremental",
     "dev": "next dev",
+    "dev:worker": "wrangler dev --port 3000",
     "format": "prettier --write . '!(node_modules|.next|contracts)/**/*'",
     "lint": "next lint",
+    "preview:worker": "pnpm run build:worker && pnpm run dev:worker",
     "serve": "next start",
     "start": "next dev"
   },
@@ -34,6 +38,7 @@
     "zustand": "~5.0.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^0.3.8",
     "@trivago/prettier-plugin-sort-imports": "~4.3.0",
     "@types/node": "~18.19.50",
     "@types/react": "~18.3.5",
@@ -44,11 +49,14 @@
     "eslint-config-next": "~14.2.15",
     "eslint-config-prettier": "~8.10.0",
     "eslint-plugin-prettier": "~5.2.1",
+    "pino-pretty": "^13.0.0",
     "postcss": "~8.4.45",
     "prettier": "~3.3.3",
     "tailwindcss": "~3.4.11",
     "type-fest": "~4.26.1",
     "typescript": "<5.6.0",
-    "vercel": "~39.1.3"
-  }
+    "vercel": "~39.1.3",
+    "wrangler": "^3.99.0"
+  },
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }

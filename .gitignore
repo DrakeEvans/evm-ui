@@ -35,3 +35,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+
+# cloudflare workers
+/.worker-next
+/.open-next
+/.wrangler
+.dev.vars

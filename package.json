@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "build:worker": "opennextjs-cloudflare",
+    "build:worker": "env-cmd -f .env.staging.worker opennextjs-cloudflare",
     "deploy:worker": "wrangler deploy",
     "check-types": "tsc --noEmit --incremental",
     "dev": "next dev",
@@ -45,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "~5.40.0",
     "abitype": "1.0.6",
     "autoprefixer": "~10.4.20",
+    "env-cmd": "^10.1.0",
     "eslint": "~8.57.1",
     "eslint-config-next": "~14.2.15",
     "eslint-config-prettier": "~8.10.0",

@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Address } from "~~/components/scaffold-eth";
+import { SignMessageForm } from "~~/components/SignMessageForm";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
@@ -22,7 +23,13 @@ const Home: NextPage = () => {
             <Address address={connectedAddress} />
           </div>
 
-          <p className="text-center text-lg">
+          {connectedAddress && (
+            <div className="mt-8 max-w-md mx-auto w-full">
+              <SignMessageForm className="w-full" />
+            </div>
+          )}
+
+          <p className="text-center text-lg mt-8">
             Get started by editing{" "}
             <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
               packages/nextjs/app/page.tsx

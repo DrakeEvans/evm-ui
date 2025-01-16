@@ -1,3 +1,7 @@
+# EVM UI
+
+A web interface for interacting with EVM-compatible blockchain networks.
+
 ## Cloudflare workers
 
 * Every push to the `master` branch deploys the dashboard to the staging environment at https://evm-ui.agorafi.co
